@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/dataframe-examples-py.iml" filepath="$PROJECT_DIR$/.idea/dataframe-examples-py.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../python-examples-master/.idea/python-examples.iml" filepath="$PROJECT_DIR$/../python-examples-master/.idea/python-examples.iml" />
     </modules>
   </component>
 </project>

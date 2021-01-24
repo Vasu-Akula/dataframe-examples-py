@@ -46,7 +46,7 @@ if __name__ == '__main__':
     fin_df.printSchema()
     fin_df.show()
 
-    print("Creating dataframe ingestion CSV file using 'SparkSession.read.csv()',")
+    print("Creating dataframe by ingesting CSV file using 'SparkSession.read.csv()',")
 
     finance_df = spark.read \
         .option("mode", "DROPMALFORMED") \
