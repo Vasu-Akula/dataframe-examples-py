@@ -77,7 +77,7 @@ if __name__ == '__main__':
         .repartition(5) \
         .write \
         .mode("overwrite") \
-        .parquet("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/nyc_omo_data")
+        .parquet("s3://" + app_conf["s3_conf"]["s3_bucket"] + "/nyc_omo_data")
 
     spark.stop()
 
