@@ -26,12 +26,12 @@ if __name__ == '__main__':
 
     # Setup spark to use s3
     hadoop_conf = spark.sparkContext._jsc.hadoopConfiguration()
-    hadoop_conf.set("fs.s3.access.key", app_secret["s3_conf"]["access_key"])
-    hadoop_conf.set("fs.s3.secret.key", app_secret["s3_conf"]["secret_access_key"])
+    hadoop_conf.set("fs.s3a.access.key", app_secret["s3_conf"]["access_key"])
+    hadoop_conf.set("fs.s3a.secret.key", app_secret["s3_conf"]["secret_access_key"])
 
     print("\nCreating dataframe ingestion parquet file using 'SparkSession.read.parquet()',")
     nyc_omo_df = spark.read \
-        .parquet("s3://" + app_conf["s3_conf"]["s3_bucket"] + "/NYC_OMO") \
+        .parquet("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/NYC_OMO") \
         .repartition(5)
 
     print("# of records = " + str(nyc_omo_df.count()))
@@ -77,7 +77,7 @@ if __name__ == '__main__':
         .repartition(5) \
         .write \
         .mode("overwrite") \
-        .parquet("s3://" + app_conf["s3_conf"]["s3_bucket"] + "/nyc_omo_data")
+        .parquet("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/nyc_omo_data")
 
     spark.stop()
 
