@@ -29,6 +29,7 @@ pip install pyyaml==5.3.1
 
 git clone https://github.com/Vasu-Akula/dataframe-examples-py.git
 cd dataframe-examples-py
+export PYTHONPATH="$PWD"
 ll
 
 # Copy 2 files (private key and .secrets) from local to EMR cluster's master node,
