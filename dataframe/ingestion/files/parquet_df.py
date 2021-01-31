@@ -30,7 +30,7 @@ if __name__ == '__main__':
     hadoop_conf.set("fs.s3a.secret.key", app_secret["s3_conf"]["secret_access_key"])
 
     print("\nCreating dataframe ingestion parquet file using 'SparkSession.read.parquet()',")
-    nyc_omo_df = spark.read \
+    nyc_omo_df = spark.read\
         .parquet("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/NYC_OMO") \
         .repartition(5)
 
@@ -81,4 +81,4 @@ if __name__ == '__main__':
 
     spark.stop()
 
-# spark-submit --packages "org.apache.hadoop:hadoop-aws:2.7.4" dataframe/ingestion/files/parquet_df.py
+    # spark-submit --packages "org.apache.hadoop:hadoop-aws:2.7.4" dataframe/ingestion/files/parquet_df.py
