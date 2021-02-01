@@ -30,7 +30,7 @@ if __name__ == '__main__':
     hadoop_conf.set("fs.s3a.access.key", app_secret["s3_conf"]["access_key"])
     hadoop_conf.set("fs.s3a.secret.key", app_secret["s3_conf"]["secret_access_key"])
 
-    fin_file_path = "s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/finances-small"
+    fin_file_path = "s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/data/finances-small"
     finance_df = spark.sql("select * from parquet.`{}`".format(fin_file_path))
 
     finance_df.printSchema()
