@@ -1,5 +1,5 @@
 s3_conf:
-  s3_bucket: test-vasu-test/finances-small
+  s3_bucket: test-vasu-test
 
 sftp_conf:
     filetype: csv
